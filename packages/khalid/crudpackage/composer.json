@@ -1,0 +1,29 @@
+{
+    "name": "khalid/crudpackage",
+    "description": "A CRUD package for laravel",
+    "type": "composer-plugin",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Khalid\\Crudpackage\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "KhalidBinHassan",
+            "email": "khalid.hgsc@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Khalid\\Crudpackage\\CrudPackageServiceProvider"
+            ],
+            "aliases": {
+                "Crudpackage": "Khalid\\Crudpackage\\Facade"
+            }
+        }
+    }
+}
