@@ -5,7 +5,7 @@ namespace Khalid\CrudPackage\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Khalid\CrudPackage\Models\Crud;
 use Illuminate\Http\Request;
-
+use Khalid\CrudPackage\Http\Requests\CrudRequest;
 class CrudController extends Controller
 {
     public function index()
@@ -20,7 +20,7 @@ class CrudController extends Controller
         return view('crudpackage::create');
     }
 
-    public function store(Request $request)
+    public function store(CrudRequest $request)
     {
         Crud::create($request->all());
 
@@ -34,7 +34,7 @@ class CrudController extends Controller
         return view('crudpackage::edit', compact('crud'));
     }
 
-    public function update(Request $request, $id)
+    public function update(CrudRequest $request, $id)
     {
         $crud = Crud::findOrFail($id);
         $crud->update($request->all());
